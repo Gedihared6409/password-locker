@@ -21,3 +21,5 @@ def create_credentials(view_password,account,login_name,pass_word)
 def save_credentials(credential):
     credential.save_credential()
     
+def del_credential(credential):
+    credential.del_credential()
