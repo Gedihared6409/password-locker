@@ -14,7 +14,7 @@ def save_user_account(user):
 def check_existing_user(character):
     return User.user_exists(character)
 
-def create_credentials(view_password,account,login_name,pass_word)
+def create_credentials(view_password,account,login_name,pass_word):
     new_credential = Credential(view_password,account,login_name,pass_word)
     return new_credential
 
@@ -35,10 +35,10 @@ def display_credentials():
 
 def main():
     print("Hello! Welcome to the Password Locker. What is your name?")
-    your_name = input()
+    your_name = input().lower()
     print("\n")
     print(f"Hello {your_name}!! What would you like to do?")
-while True:
+# while True:
     print("\nUse these short codes below:")
     print("-" * 30)
     print("\n ca - create an account, cc - create credentials, gp - generate password, cp - create own password, dc - display credentials, rc - delete credentials, ex - exit password locker")
@@ -46,14 +46,69 @@ while True:
 
     if short_code == 'ca':
             print("New account")
-            print("-" * 14)
+            print("-" * 20)
 
             print("\nEnter your user name")
-            print("-"*20)
+            print("-"*30)
             user_name = input()
 
 
+            print("\nEnter a password")
+            print("-"*30)
+            pass_word = input()
 
+
+            save_user_account(create_user_account(user_name,pass_word))
+            print("\n")
+            print(f"New Account **{user_name}** created.\n")
+    elif short_code == "cc":
+
+        print("\nLogin to your account")
+        print("-"*30)
+        print("\nUsername?")
+        print("-" * 15)
+        user_name = input()
+
+
+        print("\nPassword?")
+        print("-"*15)
+        user_password_input = input()
+
+
+        if check_existing_user(user_password_input):
+            print("\nWelcome back!")
+            print("New Credential")
+            print("-" *15)
+
+            print("\nWhich account do the credentials belong to?")
+            print("-"*40)
+            account = input()
+
+
+            print(f"\nWhat's your login name for the {account} account?")
+            print("-"*45)
+            login_name = input()
+
+
+
+
+
+
+
+
+
+
+
+
+    # elif short_code == 'ex':
+    #     print("-"*50)
+    #     print("Thank you for using Password Locker...")
+    #     print("-"*50)
+    #     break
+
+
+    # else:
+    #     print("Sorry, I didn't get that. Please use the short codes\n")
 
 if __name__ == '__main__':
     main()
