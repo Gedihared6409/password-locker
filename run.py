@@ -23,3 +23,6 @@ def save_credentials(credential):
     
 def del_credential(credential):
     credential.del_credential()
+
+def check_existing_credentials(account):
+    return Credential.credential_exist(account)
