@@ -30,4 +30,7 @@ def check_existing_credentials(account):
 def find_credential(account):
     return Credential.find_by_account(account)
 
+def display_credentials():
+    return Credential.display_credentials()
+
 
