@@ -18,6 +18,14 @@ class User:
 
         return False
 
+    @classmethod
+    def find_by_username(cls,name):
+        for user in cls.user_list:
+            if user.username == name:
+                return True
+
+        return False
+
 
         
 
