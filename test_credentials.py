@@ -20,7 +20,10 @@ class TestCredentials(unittest.TestCase):
         self.assertEqual(self.new_credentials.login,"ali")
         self.assertEqual(self.new_credentials.passward,"aligedi")
 
+    def test_save_credential(self):
 
+        self.new_credentials.save_credential()
+        self.assertEqual(len(Credentials.credentials_list),1)
 
 if __name__ == '__main__':
     unittest.main()
