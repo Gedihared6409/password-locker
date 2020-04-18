@@ -9,3 +9,16 @@ class User:
 
     def save_user(self):
         User.user_list.append(self)
+
+    @classmethod
+    def user_exists(cls,character):
+        for user in cls.user_list:
+            if user.passward == character:
+                return True
+
+        return False
+
+
+        
+
+

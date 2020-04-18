@@ -19,6 +19,14 @@ class Testuser(unittest.TestCase):
 
         self.new_user.save_user()
         self.assertEqual(len(User.user_list),1)
+
+    def test_user_exists(self):
+
+        self.new_user.save_user()
+        test_user = User("User","073645")
+        test_user.save_user()
+        user_exists = User.user_exists("073645")
+        self.assertTrue(user_exists)
     
 
 
