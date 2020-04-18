@@ -26,3 +26,8 @@ def del_credential(credential):
 
 def check_existing_credentials(account):
     return Credential.credential_exist(account)
+
+def find_credential(account):
+    return Credential.find_by_account(account)
+
+
