@@ -11,3 +11,11 @@ def create_user_account(user_name,pass_word):
 def save_user_account(user):
     user.save_user()
 
+def check_existing_user(character):
+    return User.user_exists(character)
+
+def create_credentials(view_password,account,login_name,pass_word)
+    new_credential = Credential(view_password,account,login_name,pass_word)
+    return new_credential
+
+
