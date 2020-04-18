@@ -1,7 +1,7 @@
 #!/usr/bin/env python3.6
 
-from user import user
-from credentials import credentials
+from user import User
+from credentials import Credentials
 
 
 def create_user_account(user_name,pass_word):
@@ -33,4 +33,20 @@ def find_credential(account):
 def display_credentials():
     return Credential.display_credentials()
 
+def main():
+    print("Hello! Welcome to the Password Locker. What is your name?")
+    your_name = input()
+    print("\n")
+    print(f"Hello {your_name}!! What would you like to do?")
+# while True:
+    print("\nUse these short codes below:")
+    print("-" * 30)
+    print("\n ca - create an account, cc - create credentials, gp - generate password, cp - create own password, dc - display credentials, rc - delete credentials, ex - exit password locker")
 
+
+
+
+
+
+if __name__ == '__main__':
+    main()
