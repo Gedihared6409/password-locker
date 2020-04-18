@@ -38,12 +38,19 @@ def main():
     your_name = input()
     print("\n")
     print(f"Hello {your_name}!! What would you like to do?")
-# while True:
+while True:
     print("\nUse these short codes below:")
     print("-" * 30)
     print("\n ca - create an account, cc - create credentials, gp - generate password, cp - create own password, dc - display credentials, rc - delete credentials, ex - exit password locker")
+    short_code = input()
 
+    if short_code == 'ca':
+            print("New account")
+            print("-" * 14)
 
+            print("\nEnter your user name")
+            print("-"*20)
+            user_name = input()
 
 
 
