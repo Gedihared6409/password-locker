@@ -18,6 +18,12 @@ class Credentials:
     @classmethod
     def display_credentials(cls):
         return cls.credentials_list
+    @classmethod
+    def find_by_account(cls,account):
+        for creden in cls.credentials_list:
+            if creden.account == account:
+                return True
+        return False
 
 
 
